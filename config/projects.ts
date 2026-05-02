@@ -94,7 +94,7 @@ export const Projects: ProjectInterface[] = [
     ],
     startDate: new Date("2025-12-25"),
     endDate: new Date("2026-03-01"),
-    companyLogoImg: "/projects/playball/playBall-logo.png",
+    companyLogoImg: "/projects/playball/logo-playBall.png",
     firstScreen: "/projects/playball/playBall1.png",
     pagesInfoArr: [
       {
