@@ -11,7 +11,7 @@ export const siteConfig = {
     templateRepo: "https://github.com/seifeddineba/portfolio",
   },
   ogImage:
-    "https://res.cloudinary.com/dvt5vkfwz/image/upload/v1767384721/naman_portfolio_og_image.png",
+    "https://res.cloudinary.com/dnmrpeoxj/image/upload/q_auto/f_auto/v1777684294/Screenshot_2026-05-02_020904_b0tyyg.png",
   iconIco:
     "https://res.cloudinary.com/dnmrpeoxj/image/upload/q_auto/f_auto/v1777676582/favicon_qxtvm8.ico",
   logoIcon:

@@ -557,7 +557,7 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Modern landing page design for a printing company, created in Figma with a clean, professional aesthetic.",
     techStack: ["Figma"],
-    startDate: new Date("2024-011-01"),
+    startDate: new Date("2024-11-01"),
     endDate: new Date("2024-12-23"),
     companyLogoImg: "/projects/iris/iris-logo.png",
     firstScreen: "/projects/iris/iris1.jpg",
