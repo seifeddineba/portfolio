@@ -403,7 +403,7 @@ export const Projects: ProjectInterface[] = [
     startDate: new Date("2021-02-01"),
     endDate: new Date("2021-06-01"),
     companyLogoImg: "/projects/inssuria/inssuria-logo.png",
-    firstScreen: "/projects/inssuria/inssuria1.jpg",
+    firstScreen: "/projects/inssuria/inssuria1.png",
     pagesInfoArr: [
       {
         title: "Mobile Application",
