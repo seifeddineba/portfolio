@@ -180,7 +180,7 @@ export const skillsUnsorted: skillsInterface[] = [
     name: "Nginx",
     description:
       "Deploy and manage high-performance web servers and reverse proxies.",
-    rating: 3,
+    rating: 4,
     icon: Icons.nginx,
   },
   {
@@ -201,14 +201,14 @@ export const skillsUnsorted: skillsInterface[] = [
     name: "CSS 3",
     description:
       "Style web pages creatively with the latest iteration of Cascading Style Sheets.",
-    rating: 4,
+    rating: 5,
     icon: Icons.css3,
   },
   {
     name: "AI Tools",
     description:
       "Leverage AI-assisted development tools like Claude AI, Cursor, and OpenCode for faster development.",
-    rating: 4,
+    rating: 5,
     icon: Icons.ai,
   },
 ];
