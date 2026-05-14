@@ -263,48 +263,6 @@ export const Projects: ProjectInterface[] = [
       ],
     },
   },
-  {
-    id: "deep-t",
-    companyName: "Deep-T",
-    type: "Professional",
-    category: ["Full Stack", "Web Dev", "Blockchain"],
-    shortDescription:
-      "Blockchain-based preclinical research platform ensuring traceability and integrity in preclinical studies through blockchain technology, making research reproducible, secure, and fully auditable.",
-    techStack: [
-      "React",
-      "Node.js",
-      "express.js",
-      "MySQL",
-      "Solidity",
-      "Material UI",
-      "Redux",
-      "Web3.js",
-    ],
-    startDate: new Date("2021-09-01"),
-    endDate: new Date("2023-03-01"),
-    companyLogoImg: "/projects/deep-t/deep-t-logo.png",
-    firstScreen: "/projects/deep-t/Deep-t.png",
-    pagesInfoArr: [
-      {
-        title: "Research Platform",
-        description:
-          "End-to-end preclinical workflow with study design, data validation, and blockchain traceability.",
-        imgArr: ["/projects/deep-t/Deep-t.png"],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        "Deep-T is a blockchain-based platform designed to ensure traceability and integrity in preclinical studies. By leveraging blockchain technology, the platform makes research reproducible, secure, and fully auditable.",
-        "The system provides end-to-end preclinical workflow management, study design and data validation, and scientific traceability via blockchain integration.",
-      ],
-      bullets: [
-        "Built an end-to-end preclinical research workflow management system.",
-        "Implemented study design and data validation tools for research integrity.",
-        "Integrated blockchain-based scientific traceability for audit-ready data tracking.",
-        "Developed comprehensive admin dashboard management for platform oversight.",
-      ],
-    },
-  },
 
   {
     id: "make-my-work",
@@ -367,6 +325,50 @@ export const Projects: ProjectInterface[] = [
       ],
     },
   },
+
+  {
+    id: "deep-t",
+    companyName: "Deep-T",
+    type: "Professional",
+    category: ["Full Stack", "Web Dev", "Blockchain"],
+    shortDescription:
+      "Blockchain-based preclinical research platform ensuring traceability and integrity in preclinical studies through blockchain technology, making research reproducible, secure, and fully auditable.",
+    techStack: [
+      "React",
+      "Node.js",
+      "express.js",
+      "MySQL",
+      "Solidity",
+      "Material UI",
+      "Redux",
+      "Web3.js",
+    ],
+    startDate: new Date("2021-09-01"),
+    endDate: new Date("2023-03-01"),
+    companyLogoImg: "/projects/deep-t/deep-t-logo.png",
+    firstScreen: "/projects/deep-t/Deep-t.png",
+    pagesInfoArr: [
+      {
+        title: "Research Platform",
+        description:
+          "End-to-end preclinical workflow with study design, data validation, and blockchain traceability.",
+        imgArr: ["/projects/deep-t/Deep-t.png"],
+      },
+    ],
+    descriptionDetails: {
+      paragraphs: [
+        "Deep-T is a blockchain-based platform designed to ensure traceability and integrity in preclinical studies. By leveraging blockchain technology, the platform makes research reproducible, secure, and fully auditable.",
+        "The system provides end-to-end preclinical workflow management, study design and data validation, and scientific traceability via blockchain integration.",
+      ],
+      bullets: [
+        "Built an end-to-end preclinical research workflow management system.",
+        "Implemented study design and data validation tools for research integrity.",
+        "Integrated blockchain-based scientific traceability for audit-ready data tracking.",
+        "Developed comprehensive admin dashboard management for platform oversight.",
+      ],
+    },
+  },
+
   {
     id: "usina",
     companyName: "USINA",
