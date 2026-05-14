@@ -35,6 +35,13 @@ const getDurationText = (
   return `${startYear} - ${endYear}`;
 };
 
+export function generateStaticParams() {
+  return experiences.map((experience) => ({
+    expId: experience.id,
+  }));
+}
+
+
 export async function generateMetadata({
   params,
 }: ExperienceDetailPageProps): Promise<Metadata> {

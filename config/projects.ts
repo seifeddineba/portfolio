@@ -327,8 +327,31 @@ export const Projects: ProjectInterface[] = [
     startDate: new Date("2021-09-01"),
     endDate: new Date("2022-12-01"),
     companyLogoImg: "/projects/make-my-work/mmw-logo.png",
-    firstScreen: "/projects/make-my-work/mmw-logo.png",
-    pagesInfoArr: [],
+    firstScreen: "/projects/make-my-work/mmw-1.png",
+    pagesInfoArr: [
+      {
+        title: "Home & Service Listings",
+        description:
+          "Service request posting, professional profiles, and service offer management with real-time chat and payment integration.",
+        imgArr: [
+          "/projects/make-my-work/mmw-1.png",
+          "/projects/make-my-work/mmw-2.png",
+          "/projects/make-my-work/mmw-3.png",
+          "/projects/make-my-work/mmw-4.png",
+          "/projects/make-my-work/mmw-5.png",
+        ],
+      },
+      {
+        title: "Messaging & Notifications & profile",
+        description:
+          "Real-time messaging, push notifications, and user profile management.",
+        imgArr: [
+          "/projects/make-my-work/mmw-6.png",
+          "/projects/make-my-work/mmw-7.png",
+          "/projects/make-my-work/mmw-8.png",
+        ],
+      },
+    ],
     descriptionDetails: {
       paragraphs: [
         "MakeMyWork is a service marketplace and freelance platform where users can post service requests and professionals can offer their services. The platform includes real-time messaging, push notifications, and a comprehensive payment system.",
