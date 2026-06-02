@@ -148,6 +148,7 @@ export const Projects: ProjectInterface[] = [
       "PostgreSQL",
       "Python",
       "Socket.io",
+      "GraphQL",
     ],
     startDate: new Date("2024-01-01"),
     endDate: new Date("2024-06-01"),

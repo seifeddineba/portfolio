@@ -79,6 +79,7 @@ import {
   SiNginx,
   SiReactquery,
   SiStripe,
+  SiPostman 
 } from "react-icons/si";
 
 export const Icons = {
@@ -158,6 +159,7 @@ export const Icons = {
   reactQuery:SiReactquery,
   reactRTK:SiReactquery,
   stripe:SiStripe,
+  restApi: SiPostman ,
   successAnimated: ({ ...props }: LucideProps) => (
     <div className="svg-container">
       <svg

@@ -211,6 +211,27 @@ export const skillsUnsorted: skillsInterface[] = [
     rating: 5,
     icon: Icons.ai,
   },
+  {
+  name: "AWS",
+  description:
+    "Deploy and scale production workloads on AWS (EC2, S3, Lambda, RDS, CloudFront) with automated CI/CD and infrastructure-as-code practices.",
+  rating: 4,
+  icon: Icons.amazonaws,
+},
+{
+  name: "GraphQL",
+  description:
+    "Design efficient GraphQL schemas and resolvers using Apollo Server and Node.js, enabling precise data fetching and optimized API performance.",
+  rating: 4,
+  icon: Icons.graphql,
+},
+{
+  name: "RESTful API",
+  description:
+    "Architect secure, scalable REST APIs with Node.js and Express.js, powering authentication, trading operations, and third-party financial integrations.",
+  rating: 5,
+  icon: Icons.restApi,
+}
 ];
 
 export const skills = skillsUnsorted
