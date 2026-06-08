@@ -73,7 +73,7 @@ export const experiences: ExperienceInterface[] = [
     company: "Freelance",
     location: "Monastir, Tunisia",
     startDate: new Date("2023-09-01"),
-    endDate: "Present",
+    endDate: new Date("2026-03-01"),
     description: [
       "Developed custom web applications using React.js and Node.js for various clients.",
       "Designed REST APIs and integrated third-party services.",
