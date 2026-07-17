@@ -95,7 +95,7 @@ Display my technical projects with detailed information, technologies used, live
 
 ### Skills Showcase
 
-Visually represent my technical and soft skills with customizable ratings and categories.
+Visually represent my technical and soft skills and categories.
 
 ### Contact Form Integration
 
