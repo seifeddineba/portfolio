@@ -1,5 +1,3 @@
-<a href="https://buymeachai.ezee.li/seifeddineba" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dvt5vkfwz/image/upload/v1767625332/buy_chai_seif.png" alt="Buy Me A Chai" width="200"></a>
-
 # Seif Eddine BEN AICHA - Portfolio
 
 A modern, responsive, and SEO-optimized **Next.js 16 portfolio** showcasing my experience as a Full-Stack JavaScript Developer with 4+ years of experience in React.js, Node.js, TypeScript, and Next.js. Built with server-side rendering, TypeScript, and the latest web standards for optimal performance.
