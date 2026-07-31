@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Seif Eddine BEN AICHA | Full-Stack JavaScript Developer",
     short_name: "Seif Eddine BEN AICHA",
     description:
-      "Seif Eddine BEN AICHA - Full-Stack JavaScript Developer with 4+ years of experience in React.js, Node.js, TypeScript, and Next.js.",
+      "Seif Eddine BEN AICHA - Full-Stack JavaScript Developer with 5 years of experience in React.js, Node.js, TypeScript, and Next.js.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

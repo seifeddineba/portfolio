@@ -1,6 +1,6 @@
 # Seif Eddine BEN AICHA - Portfolio
 
-A modern, responsive, and SEO-optimized **Next.js 16 portfolio** showcasing my experience as a Full-Stack JavaScript Developer with 4+ years of experience in React.js, Node.js, TypeScript, and Next.js. Built with server-side rendering, TypeScript, and the latest web standards for optimal performance.
+A modern, responsive, and SEO-optimized **Next.js 16 portfolio** showcasing my experience as a Full-Stack JavaScript Developer with 5 years of experience in React.js, Node.js, TypeScript, and Next.js. Built with server-side rendering, TypeScript, and the latest web standards for optimal performance.
 
 ## ✨ Key Features
 

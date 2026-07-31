@@ -22,7 +22,7 @@ import profileImg from "@/public/profile-img.jpg";
 export const metadata: Metadata = {
   title: `${pagesConfig.home.metadata.title}`,
   description:
-    "Seif Eddine BEN AICHA - Full-Stack JavaScript Developer with 4+ years of experience in React.js, Node.js, TypeScript, and Next.js. Explore my projects, experience, and skills.",
+    "Seif Eddine BEN AICHA - Full-Stack JavaScript Developer with 5 years of experience in React.js, Node.js, TypeScript, and Next.js. Explore my projects, experience, and skills.",
   alternates: {
     canonical: siteConfig.url,
   },
@@ -74,7 +74,7 @@ export default function IndexPage() {
           </AnimatedText>
           <div className="mt-4 max-w-[42rem] text-center">
             <p className="leading-normal text-muted-foreground text-sm sm:text-base">
-              Full-Stack JavaScript Developer with 4+ years of experience designing
+              Full-Stack JavaScript Developer with 5 years of experience designing
               and delivering scalable, high-performance web applications using
               React.js, Node.js, TypeScript, and Next.js.
             </p>

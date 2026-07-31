@@ -21,7 +21,7 @@ export const experiences: ExperienceInterface[] = [
     company: "Trimakus",
     location: "Monastir, Tunisia",
     startDate: new Date("2021-08-01"),
-    endDate: "Present",
+    endDate: new Date("2026-07-31"),
     description: [
       "Developed and optimized responsive web applications with React.js, Next.js and TypeScript, improving load times by 30% and enhancing UX.",
       "Designed and implemented secure REST APIs with Node.js/Express.js for authentication, trading operations, and third-party integrations.",
@@ -55,6 +55,7 @@ export const experiences: ExperienceInterface[] = [
       "Material UI",
       "Tailwind CSS",
       "Jenkins",
+      "AWS",
       "Jest",
       "OneSignal",
       "Web3.js",
