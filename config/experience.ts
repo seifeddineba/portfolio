@@ -17,7 +17,7 @@ export interface ExperienceInterface {
 export const experiences: ExperienceInterface[] = [
   {
     id: "trimakus-fullstack",
-    position: "Full-Stack JavaScript Developer",
+    position: "Full-Stack Developer",
     company: "Trimakus",
     location: "Monastir, Tunisia",
     startDate: new Date("2021-08-01"),
@@ -70,7 +70,7 @@ export const experiences: ExperienceInterface[] = [
   },
   {
     id: "freelance",
-    position: "Full-Stack JavaScript Developer",
+    position: "Full-Stack Developer",
     company: "Freelance",
     location: "Monastir, Tunisia",
     startDate: new Date("2023-09-01"),

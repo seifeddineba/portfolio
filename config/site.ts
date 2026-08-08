@@ -1,9 +1,9 @@
 export const siteConfig = {
-  name: "Seif Eddine BEN AICHA - Full-Stack JavaScript Developer",
+  name: "Seif Eddine BEN AICHA - Full-Stack Developer",
   authorName: "Seif Eddine Ben Aicha",
   username: "seifeddineba",
   description:
-    "Seif Eddine BEN AICHA - Full-Stack JavaScript Developer with 5 years of experience in React.js, Node.js, TypeScript, and Next.js. Explore my projects, experience, and skills.",
+    "Seif Eddine BEN AICHA - Full-Stack Developer with 5 years of experience in React.js, Node.js, TypeScript, and Next.js. Explore my projects, experience, and skills.",
   url: "https://portfolio-seifeddineba.vercel.app",
   links: {
     github: "https://github.com/seifeddineba",

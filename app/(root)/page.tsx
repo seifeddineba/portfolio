@@ -22,7 +22,7 @@ import profileImg from "@/public/profile-img.jpg";
 export const metadata: Metadata = {
   title: `${pagesConfig.home.metadata.title}`,
   description:
-    "Seif Eddine BEN AICHA - Full-Stack JavaScript Developer with 5 years of experience in React.js, Node.js, TypeScript, and Next.js. Explore my projects, experience, and skills.",
+    "Seif Eddine BEN AICHA - Full-Stack Developer with 5 years of experience in React.js, Node.js, TypeScript, and Next.js. Explore my projects, experience, and skills.",
   alternates: {
     canonical: siteConfig.url,
   },
@@ -35,7 +35,7 @@ export default function IndexPage() {
     name: siteConfig.authorName,
     url: siteConfig.url,
     image: siteConfig.ogImage,
-    jobTitle: "Full-Stack JavaScript Developer",
+    jobTitle: "Full-Stack Developer",
     sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
   };
 
@@ -55,7 +55,7 @@ export default function IndexPage() {
             width={100}
             sizes="100vw"
             className="bg-primary rounded-full mb-0 h-auto md:mb-2 w-[60%] max-w-[16rem] border-8 border-primary"
-            alt="Seif Eddine BEN AICHA - Full-Stack JavaScript Developer Portfolio"
+            alt="Seif Eddine BEN AICHA - Full-Stack Developer Portfolio"
             priority
           />
           <AnimatedText
@@ -70,11 +70,11 @@ export default function IndexPage() {
             delay={0.4}
             className="font-heading text-base sm:text-xl md:text-xl lg:text-2xl"
           >
-            Full-Stack JavaScript Developer
+            Full-Stack Developer
           </AnimatedText>
           <div className="mt-4 max-w-[42rem] text-center">
             <p className="leading-normal text-muted-foreground text-sm sm:text-base">
-              Full-Stack JavaScript Developer with 5 years of experience designing
+              Full-Stack Developer with 5 years of experience designing
               and delivering scalable, high-performance web applications using
               React.js, Node.js, TypeScript, and Next.js.
             </p>
