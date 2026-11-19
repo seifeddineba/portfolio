@@ -15,7 +15,8 @@ export const siteConfig = {
   iconIco:
     "/favicon.ico",
   logoIcon:
-    "/logo.png",
+    "/apple-touch-icon.png",
+  iconSvg: "/icon.svg",
   keywords: [
     "Seif Eddine BEN AICHA",
     "Full-Stack Developer",

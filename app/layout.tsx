@@ -62,8 +62,11 @@ export const metadata = {
     ],
   },
   icons: {
-    icon: siteConfig.iconIco,
-    shortcut: siteConfig.logoIcon,
+    icon: [
+      { url: siteConfig.iconIco, sizes: "any" },
+      { url: siteConfig.iconSvg, type: "image/svg+xml" },
+    ],
+    shortcut: siteConfig.iconIco,
     apple: siteConfig.logoIcon,
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
