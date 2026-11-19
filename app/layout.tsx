@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Inter as FontSans } from "next/font/google";
+import { Inter as FontSans, JetBrains_Mono as FontMono } from "next/font/google";
 import localFont from "next/font/local";
 
 import { Analytics } from "@/components/common/analytics";
@@ -13,6 +13,11 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+});
+
+const fontMono = FontMono({
+  subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 // Font files can be colocated inside of `pages`
@@ -93,22 +98,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
-          fontHeading.variable
+          fontHeading.variable,
+          fontMono.variable
         )}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
-          themes={[
-            "light",
-            "dark",
-            "retro",
-            "cyberpunk",
-            "paper",
-            "aurora",
-            "synthwave",
-          ]}
+          defaultTheme="dark"
+          enableSystem={false}
+          themes={["light", "dark"]}
         >
           {children}
           <Analytics />

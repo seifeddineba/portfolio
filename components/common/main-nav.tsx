@@ -1,101 +1,93 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Norican } from "next/font/google";
 import Link from "next/link";
-import { usePathname, useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
 import * as React from "react";
 
 import { Icons } from "@/components/common/icons";
 import { MobileNav } from "@/components/common/mobile-nav";
-import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 interface MainNavProps {
-  items?: any[];
+  items?: { title: string; href: string; disabled?: boolean }[];
   children?: React.ReactNode;
 }
 
-const norican = Norican({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-// Animation variants for the navigation items
-const navItemVariants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.1 * i,
-      duration: 0.5,
-      ease: "easeOut" as const,
-    },
-  }),
-};
+export function Logo({ className }: { className?: string }) {
+  return (
+    <Link
+      href="/"
+      className={cn(
+        "group flex items-center gap-2 font-mono text-sm font-semibold tracking-tight",
+        className
+      )}
+      aria-label="Home"
+    >
+      <span className="relative grid h-8 w-8 place-items-center rounded-lg border border-primary/40 bg-primary/10 text-primary shadow-glow-sm transition-transform duration-500 group-hover:rotate-90">
+        <span className="h-2.5 w-2.5 rotate-45 rounded-[2px] bg-primary" />
+      </span>
+      <span>
+        seif<span className="text-primary">.dev</span>
+      </span>
+    </Link>
+  );
+}
 
 export function MainNav({ items, children }: MainNavProps) {
-  const segment = useSelectedLayoutSegment();
-  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
   const pathname = usePathname();
+  const [menu, setMenu] = React.useState({ open: false, path: pathname });
 
-  React.useEffect(() => {
-    setShowMobileMenu(false);
-  }, [pathname]);
+  // Close the mobile menu whenever the route changes.
+  const showMobileMenu = menu.open && menu.path === pathname;
 
   return (
-    <div className="flex gap-6 md:gap-10">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Link href="/" className="hidden items-center space-x-2 md:flex">
-          <span className={cn(norican.className, "text-2xl")}>
-            {siteConfig.authorName}
-          </span>
-        </Link>
-      </motion.div>
+    <div className="flex flex-1 items-center gap-8">
+      <Logo />
       {items?.length ? (
-        <nav className="hidden gap-6 md:flex items-center">
-          {items?.map((item, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              initial="hidden"
-              animate="visible"
-              variants={navItemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+        <nav className="hidden items-center gap-1 md:flex">
+          {items.map((item) => {
+            const active = pathname.startsWith(item.href);
+            return (
               <Link
+                key={item.href}
                 href={item.disabled ? "#" : item.href}
                 className={cn(
-                  "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
-                  item.href.startsWith(`/${segment}`)
+                  "relative rounded-md px-3 py-2 font-mono text-[13px] transition-colors",
+                  active
                     ? "text-foreground"
-                    : "text-foreground/60",
-                  item.disabled && "cursor-not-allowed opacity-80"
+                    : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                {item.title}
+                <span className="text-primary/70">~/</span>
+                {item.title.toLowerCase()}
+                {active && (
+                  <motion.span
+                    layoutId="nav-active"
+                    className="absolute inset-x-2 -bottom-[13px] h-px bg-primary shadow-[0_0_12px_hsl(var(--primary))]"
+                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                  />
+                )}
               </Link>
-            </motion.div>
-          ))}
+            );
+          })}
         </nav>
       ) : null}
-      <motion.button
-        className="flex items-center space-x-2 md:hidden"
-        onClick={() => setShowMobileMenu(!showMobileMenu)}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+      <button
+        className="ml-auto flex items-center gap-2 rounded-lg border border-border/60 px-3 py-1.5 font-mono text-xs md:hidden"
+        onClick={() =>
+          setMenu({ open: !showMobileMenu, path: pathname })
+        }
+        aria-expanded={showMobileMenu}
+        aria-label="Toggle menu"
       >
-        {showMobileMenu ? <Icons.close /> : <Icons.menu />}
-        <span className="font-bold">Menu</span>
-      </motion.button>
+        {showMobileMenu ? (
+          <Icons.close className="h-4 w-4" />
+        ) : (
+          <Icons.menu className="h-4 w-4" />
+        )}
+        menu
+      </button>
       {showMobileMenu && items && (
         <MobileNav items={items}>{children}</MobileNav>
       )}

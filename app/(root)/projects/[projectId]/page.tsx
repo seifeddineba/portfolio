@@ -2,15 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+import { AnimatedSection } from "@/components/common/animated-section";
+import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
+import { TerminalWindow } from "@/components/common/terminal-window";
 import ProjectDescription from "@/components/projects/project-description";
 import { buttonVariants } from "@/components/ui/button";
-import ChipContainer from "@/components/ui/chip-container";
-import CustomTooltip from "@/components/ui/custom-tooltip";
+import Chip from "@/components/ui/chip";
 import { Projects } from "@/config/projects";
-import { siteConfig } from "@/config/site";
-import { cn, formatDateFromObj } from "@/lib/utils";
-import profileImg from "@/public/profile-img.png";
+import { cn, formatMonthYear, shortHash } from "@/lib/utils";
 
 interface ProjectPageProps {
   params: Promise<{
@@ -24,141 +24,187 @@ export function generateStaticParams() {
   }));
 }
 
-
 export default async function Project({ params }: ProjectPageProps) {
   const { projectId } = await params;
-  let project = Projects.find((val) => val.id === projectId);
+  const index = Projects.findIndex((val) => val.id === projectId);
+  const project = Projects[index];
   if (!project) {
     redirect("/projects");
   }
+  const next = Projects[(index + 1) % Projects.length];
+
+  const spec: [string, React.ReactNode][] = [
+    ["type", project.type],
+    [
+      "timeline",
+      `${formatMonthYear(project.startDate)} → ${formatMonthYear(project.endDate)}`,
+    ],
+    ["category", project.category.join(", ")],
+    ["commit", shortHash(project.id)],
+  ];
 
   return (
-    <article className="container relative max-w-3xl py-6 lg:py-10">
-      <Link
-        href="/projects"
-        className={cn(
-          buttonVariants({ variant: "ghost" }),
-          "absolute left-[-200px] top-14 hidden xl:inline-flex"
-        )}
-      >
-        <Icons.chevronLeft className="mr-2 h-4 w-4" />
-        All Projects
-      </Link>
-      <div>
-        <time
-          dateTime={Date.now().toString()}
-          className="block text-sm text-muted-foreground"
-        >
-          {formatDateFromObj(project.startDate)}
-        </time>
-        <h1 className="flex items-center justify-between mt-2 font-heading text-4xl leading-tight lg:text-5xl">
-          {project.companyName}
-          <div className="flex items-center">
-            {project.githubLink && (
-              <CustomTooltip text="Link to the source code.">
-                <Link href={project.githubLink} target="_blank">
-                  <Icons.gitHub className="w-6 ml-4 text-muted-foreground hover:text-foreground" />
-                </Link>
-              </CustomTooltip>
-            )}
-            {project.websiteLink && (
-              <CustomTooltip text="Please note that some project links may be temporarily unavailable.">
-                <Link href={project.websiteLink} target="_blank">
-                  <Icons.externalLink className="w-6 ml-4 text-muted-foreground hover:text-foreground " />
-                </Link>
-              </CustomTooltip>
-            )}
-          </div>
-        </h1>
-        <ChipContainer textArr={project.category} />
-        <div className="mt-4 flex space-x-4">
-          <Link
-            href={siteConfig.links.github}
-            className="flex items-center space-x-2 text-sm"
-          >
-            <Image
-              src={profileImg}
-              alt={"seif"}
-              width={42}
-              height={42}
-              className="rounded-full bg-background"
-            />
-
-            <div className="flex-1 text-left leading-tight">
-              <p className="font-medium">{"Seif Eddine BEN AICHA"}</p>
-              <p className="text-[12px] text-muted-foreground">
-                @{siteConfig.username}
-              </p>
-            </div>
-          </Link>
-        </div>
-      </div>
-
-      <div className="flex justify-center">
-        <Image
-          src={project.companyLogoImg}
-          alt={project.companyName}
-          width={350}
-          height={350}
-          className="my-8 bg-muted border rounded-md transition-colors"
-          priority
-        />
-      </div>
-      <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
-          Tech Stack
-        </h2>
-        <ChipContainer textArr={project.techStack} />
-      </div>
-
-      <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
-          Description
-        </h2>
-        {/* {<project.descriptionComponent />} */}
-        <ProjectDescription
-          paragraphs={project.descriptionDetails.paragraphs}
-          bullets={project.descriptionDetails.bullets}
-        />
-      </div>
-
-      <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-5">
-          Page Info
-        </h2>
-        {project.pagesInfoArr.map((page, ind) => (
-          <div key={ind}>
-            <h3 className="flex items-center font-heading text-xl leading-tight lg:text-xl mt-3">
-              <Icons.star className="h-5 w-5 mr-2" /> {page.title}
-            </h3>
-            <div>
-              <p>{page.description}</p>
-              {page.imgArr.map((img, ind) => (
-                <Image
-                  src={img}
-                  key={ind}
-                  alt={img}
-                  width={720}
-                  height={405}
-                  className="my-4 rounded-md border bg-muted transition-colors"
-                  priority
-                />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <hr className="mt-12" />
-      <div className="flex justify-center py-6 lg:py-10">
+    <ClientPageWrapper>
+      <article className="py-10 lg:py-14">
         <Link
           href="/projects"
-          className={cn(buttonVariants({ variant: "ghost" }))}
+          className="group inline-flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-primary"
         >
-          <Icons.chevronLeft className="mr-2 h-4 w-4" />
-          All Projects
+          <Icons.chevronLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+          cd ../projects
         </Link>
-      </div>
-    </article>
+
+        {/* Header */}
+        <header className="mt-8 grid gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
+          <div>
+            <p className="font-mono text-xs text-primary">
+              {"// "}project/{project.id}
+            </p>
+            <div className="mt-4 flex items-center gap-4">
+              <div className="grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-xl border border-border/70 bg-white p-2">
+                <Image
+                  src={project.companyLogoImg}
+                  alt={`${project.companyName} logo`}
+                  width={64}
+                  height={64}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <h1 className="font-heading text-4xl tracking-tight md:text-6xl">
+                <span className="text-gradient">{project.companyName}</span>
+              </h1>
+            </div>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              {project.shortDescription}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {project.websiteLink && (
+                <Link
+                  href={project.websiteLink}
+                  target="_blank"
+                  className={cn(buttonVariants())}
+                >
+                  Live site <Icons.arrowUpRight className="ml-2 h-4 w-4" />
+                </Link>
+              )}
+              {project.githubLink && (
+                <Link
+                  href={project.githubLink}
+                  target="_blank"
+                  className={cn(buttonVariants({ variant: "outline" }))}
+                >
+                  <Icons.gitHub className="mr-2 h-4 w-4" /> Source
+                </Link>
+              )}
+            </div>
+          </div>
+
+          <TerminalWindow title="spec.yml" bodyClassName="text-[13px]">
+            <dl className="space-y-2.5">
+              {spec.map(([k, v]) => (
+                <div key={k} className="flex gap-3">
+                  <dt className="w-20 shrink-0 text-primary">{k}:</dt>
+                  <dd className="text-foreground">{v}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mb-2 mt-5 text-primary">stack:</p>
+            <div className="flex flex-wrap gap-1.5">
+              {project.techStack.map((t) => (
+                <Chip key={t} content={t} />
+              ))}
+            </div>
+          </TerminalWindow>
+        </header>
+
+        {project.firstScreen && (
+          <AnimatedSection className="mt-14">
+            <div className="glass overflow-hidden rounded-xl p-2 shadow-glow">
+              <Image
+                src={project.firstScreen}
+                alt={`${project.companyName} preview`}
+                width={1600}
+                height={900}
+                className="w-full rounded-lg"
+                priority
+              />
+            </div>
+          </AnimatedSection>
+        )}
+
+        {/* Overview */}
+        <section className="mt-20 grid gap-8 lg:grid-cols-[200px_1fr]">
+          <p className="font-mono text-xs text-primary">{"// overview"}</p>
+          <div className="max-w-3xl text-base leading-relaxed text-muted-foreground [&_li]:mb-2 [&_li]:marker:text-primary [&_p]:text-foreground/90">
+            <ProjectDescription
+              paragraphs={project.descriptionDetails.paragraphs}
+              bullets={project.descriptionDetails.bullets}
+            />
+          </div>
+        </section>
+
+        {/* Screens */}
+        <section className="mt-20 grid gap-8 lg:grid-cols-[200px_1fr]">
+          <p className="font-mono text-xs text-primary">{"// screens"}</p>
+          <div className="space-y-16">
+            {project.pagesInfoArr.map((page, ind) => (
+              <AnimatedSection key={ind}>
+                <div className="mb-4 flex items-baseline gap-3">
+                  <span className="font-mono text-xs text-muted-foreground">
+                    {String(ind + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-heading text-2xl tracking-tight">
+                    {page.title}
+                  </h3>
+                </div>
+                {page.description && (
+                  <p className="mb-6 max-w-2xl text-muted-foreground">
+                    {page.description}
+                  </p>
+                )}
+                <div className="space-y-6">
+                  {page.imgArr.map((img, i) => (
+                    <div
+                      key={i}
+                      className="overflow-hidden rounded-xl border border-border/70 bg-muted"
+                    >
+                      <Image
+                        src={img}
+                        alt={`${project.companyName} — ${page.title} ${i + 1}`}
+                        width={1440}
+                        height={810}
+                        className="w-full"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </section>
+
+        {/* Next project */}
+        <div className="hairline mt-24" />
+        <div className="flex flex-col items-start justify-between gap-6 py-10 sm:flex-row sm:items-center">
+          <Link
+            href="/projects"
+            className={cn(buttonVariants({ variant: "ghost" }), "font-mono")}
+          >
+            <Icons.chevronLeft className="mr-2 h-4 w-4" />
+            all projects
+          </Link>
+          {next && next.id !== project.id && (
+            <Link href={`/projects/${next.id}`} className="group text-right">
+              <span className="block font-mono text-xs text-muted-foreground">
+                next project →
+              </span>
+              <span className="font-heading text-2xl tracking-tight transition-colors group-hover:text-primary md:text-3xl">
+                {next.companyName}
+              </span>
+            </Link>
+          )}
+        </div>
+      </article>
+    </ClientPageWrapper>
   );
 }

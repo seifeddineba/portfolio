@@ -52,10 +52,16 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        success: "hsl(var(--success))",
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         heading: ["var(--font-heading)", ...fontFamily.sans],
+        mono: ["var(--font-mono)", ...fontFamily.mono],
+      },
+      boxShadow: {
+        glow: "0 0 0 1px hsl(var(--primary) / 0.35), 0 8px 40px -8px hsl(var(--primary) / 0.45)",
+        "glow-sm": "0 0 24px -6px hsl(var(--primary) / 0.5)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -71,10 +77,30 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        "caret-blink": {
+          "0%,70%,100%": { opacity: 1 },
+          "20%,50%": { opacity: 0 },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        float: {
+          "0%,100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+        "pulse-dot": {
+          "0%": { boxShadow: "0 0 0 0 hsl(var(--success) / 0.6)" },
+          "100%": { boxShadow: "0 0 0 8px hsl(var(--success) / 0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "caret-blink": "caret-blink 1.1s ease-out infinite",
+        marquee: "marquee 40s linear infinite",
+        float: "float 5s ease-in-out infinite",
+        "pulse-dot": "pulse-dot 1.6s ease-out infinite",
       },
     },
   },

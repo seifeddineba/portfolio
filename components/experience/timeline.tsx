@@ -1,109 +1,111 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+import { AnimatedSection } from "@/components/common/animated-section";
 import { Icons } from "@/components/common/icons";
-import { Button } from "@/components/ui/button";
 import { ExperienceInterface } from "@/config/experience";
-
-// Helper function to extract year from date
-const getYearFromDate = (date: Date): string => {
-  return new Date(date).getFullYear().toString();
-};
-
-// Helper function to get duration text
-const getDurationText = (
-  startDate: Date,
-  endDate: Date | "Present"
-): string => {
-  const startYear = getYearFromDate(startDate);
-  const endYear =
-    typeof endDate === "string" ? "Present" : getYearFromDate(endDate);
-  return `${startYear} - ${endYear}`;
-};
+import { formatYearRange, shortHash } from "@/lib/utils";
 
 interface TimelineProps {
   experiences: ExperienceInterface[];
 }
 
+const endTime = (e: ExperienceInterface) =>
+  e.endDate === "Present" ? Date.now() : new Date(e.endDate).getTime();
+
 const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
-  // Sort experiences by date (most recent first)
-  const sortedExperiences = [...experiences].sort((a, b) => {
-    const dateA = a.endDate === "Present" ? new Date() : a.endDate;
-    const dateB = b.endDate === "Present" ? new Date() : b.endDate;
-    return dateB.getTime() - dateA.getTime();
-  });
+  const sorted = [...experiences].sort((a, b) => endTime(b) - endTime(a));
 
   return (
-    <div className="space-y-4">
-      {sortedExperiences.map((experience, index) => (
-        <div key={index} >
-          <div className="w-full p-4 sm:p-6 bg-background border border-border rounded-lg transition-all duration-300">
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-              <div className="flex items-start gap-4 flex-1 min-w-0">
-                {experience.logo && (
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg border-2 border-border overflow-hidden bg-white flex-shrink-0">
+    <ol className="relative">
+      {/* rail */}
+      <span
+        aria-hidden
+        className="absolute bottom-2 left-[11px] top-2 w-px bg-gradient-to-b from-primary via-secondary/60 to-transparent"
+      />
+      {sorted.map((exp, i) => (
+        <AnimatedSection
+          key={exp.id}
+          delay={0.06 * i}
+          className="relative pb-10 pl-10 last:pb-0"
+        >
+          <li className="list-none">
+            {/* node */}
+            <span
+              aria-hidden
+              className="absolute left-0 top-6 grid h-6 w-6 place-items-center rounded-full border border-primary/50 bg-background shadow-glow-sm"
+            >
+              <span className="h-2 w-2 rounded-full bg-primary" />
+            </span>
+
+            <Link
+              href={`/experience/${exp.id}`}
+              className="bracket group block rounded-xl border border-border/70 bg-card/60 p-5 backdrop-blur transition-all hover:border-primary/40 hover:shadow-glow sm:p-6"
+            >
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[11px] text-muted-foreground">
+                <span className="text-secondary">commit {shortHash(exp.id)}</span>
+                <span>·</span>
+                <span>{formatYearRange(exp.startDate, exp.endDate)}</span>
+                <span>·</span>
+                <span className="inline-flex items-center gap-1">
+                  <Icons.mapPin className="h-3 w-3" />
+                  {exp.location}
+                </span>
+              </div>
+
+              <div className="mt-4 flex items-start gap-4">
+                {exp.logo && (
+                  <div className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-lg border border-border/70 bg-white p-1.5">
                     <Image
-                      src={experience.logo}
-                      alt={experience.company}
-                      width={64}
-                      height={64}
-                      className="w-full h-full object-contain p-2"
+                      src={exp.logo}
+                      alt={exp.company}
+                      width={48}
+                      height={48}
+                      className="h-full w-full object-contain"
                     />
                   </div>
                 )}
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                    <h3 className="text-lg sm:text-xl font-bold text-foreground">
-                      {experience.position}
-                    </h3>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-primary/10 text-primary border border-primary/20 w-fit">
-                      {getDurationText(
-                        experience.startDate,
-                        experience.endDate
-                      )}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-sm font-medium text-muted-foreground">
-                      {experience.company}
-                    </span>
-                    {experience.companyUrl && (
-                      <a
-                        href={experience.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <Icons.externalLink className="w-4 h-4" />
-                      </a>
-                    )}
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    {experience.location}
-                  </p>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
-                    {experience.description[0]}
+                <div className="min-w-0 flex-1">
+                  <h3 className="flex items-center gap-2 font-heading text-xl tracking-tight sm:text-2xl">
+                    {exp.position}
+                    <Icons.arrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground opacity-0 transition-all group-hover:text-primary group-hover:opacity-100" />
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    @ <span className="text-foreground">{exp.company}</span>
                   </p>
                 </div>
               </div>
-              <Button
-                variant="outline"
-                size="sm"
-                className="rounded-lg w-full sm:w-auto"
-                asChild
-              >
-                <Link href={`/experience/${experience.id}`}>
-                  View Details
-                  <Icons.chevronRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
+
+              <ul className="mt-4 space-y-1.5 font-mono text-[12.5px] leading-relaxed">
+                {exp.achievements.slice(0, 2).map((a, idx) => (
+                  <li key={idx} className="flex gap-2 text-muted-foreground">
+                    <span className="select-none text-success">+</span>
+                    <span>{a}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {exp.skills.slice(0, 6).map((s, idx) => (
+                  <span
+                    key={`${s}-${idx}`}
+                    className="rounded border border-border/70 px-2 py-0.5 font-mono text-[10px] text-muted-foreground"
+                  >
+                    {s}
+                  </span>
+                ))}
+                {exp.skills.length > 6 && (
+                  <span className="px-1 py-0.5 font-mono text-[10px] text-primary">
+                    +{exp.skills.length - 6} more
+                  </span>
+                )}
+              </div>
+            </Link>
+          </li>
+        </AnimatedSection>
       ))}
-    </div>
+    </ol>
   );
 };
 
