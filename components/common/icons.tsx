@@ -81,7 +81,15 @@ import {
   SiNginx,
   SiReactquery,
   SiStripe,
-  SiPostman 
+  SiPostman,
+  SiExpo,
+  SiEthereum,
+  SiSequelize,
+  SiTypeorm,
+  SiMongoose,
+  SiCypress,
+  SiJsonwebtokens,
+  SiScrumalliance,
 } from "react-icons/si";
 
 export const Icons = {
@@ -161,7 +169,18 @@ export const Icons = {
   reactQuery:SiReactquery,
   reactRTK:SiReactquery,
   stripe:SiStripe,
-  restApi: SiPostman ,
+  restApi: SiPostman,
+  postman: SiPostman,
+  expo: SiExpo,
+  ethereum: SiEthereum,
+  sequelize: SiSequelize,
+  typeorm: SiTypeorm,
+  mongoose: SiMongoose,
+  cypress: SiCypress,
+  jwt: SiJsonwebtokens,
+  agile: SiScrumalliance,
+  tuleap: FileText,
+  truffle: Settings,
   successAnimated: ({ ...props }: LucideProps) => (
     <div className="svg-container">
       <svg

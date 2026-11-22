@@ -40,18 +40,12 @@ const firstStart = Math.min(
 const yearsOfExperience = Math.floor(
   (Date.now() - firstStart) / (365.25 * 24 * 3600 * 1000)
 );
-const allAchievements = experiences.flatMap((e) => e.achievements);
-const percentFor = (keyword: RegExp, fallback: number) => {
-  const line = allAchievements.find((a) => keyword.test(a));
-  const match = line?.match(/(\d+)%/);
-  return match ? Number(match[1]) : fallback;
-};
 
 const stats = [
   { value: yearsOfExperience, suffix: "+", label: "years shipping" },
   { value: Projects.length, suffix: "", label: "projects delivered" },
-  { value: percentFor(/load time/i, 30), suffix: "%", label: "faster load times" },
-  { value: percentFor(/deployment/i, 40), suffix: "%", label: "faster deployments" },
+  { value: 4, suffix: "", label: "colleagues mentored" },
+  { value: 3, suffix: "", label: "interns guided" },
 ];
 
 const orbitBadges = [
@@ -219,9 +213,10 @@ export default function IndexPage() {
             <span className="text-gradient">not just features.</span>
           </h2>
           <p className="mt-5 max-w-xl text-muted-foreground">
-            {yearsOfExperience}+ years building platforms for healthcare, fintech, sports and
-            blockchain. I care about performance budgets, secure APIs and
-            clean, typed codebases that teams can grow with.
+            {yearsOfExperience}+ years building web and mobile apps for
+            clinical research, healthcare, recruitment, e-commerce and
+            blockchain. I work directly with clients, from design to
+            delivery: backend, databases, frontend, hosting and CI/CD.
           </p>
         </div>
         <TerminalWindow title="~/profile.json">
@@ -249,9 +244,9 @@ export default function IndexPage() {
               <span className="text-success">&quot;Solidity&quot;</span>],
               {"\n  "}
               <span className="text-primary">&quot;focus&quot;</span>: [
-              <span className="text-success">&quot;performance&quot;</span>,{" "}
-              <span className="text-success">&quot;security&quot;</span>,{" "}
-              <span className="text-success">&quot;DX&quot;</span>],
+              <span className="text-success">&quot;full-stack&quot;</span>,{" "}
+              <span className="text-success">&quot;clean code&quot;</span>,{" "}
+              <span className="text-success">&quot;delivery&quot;</span>],
               {"\n  "}
               <span className="text-primary">&quot;available&quot;</span>:{" "}
               <span className="text-secondary">true</span>

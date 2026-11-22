@@ -8,206 +8,262 @@ export interface skillsInterface {
 }
 
 export const skillsUnsorted: skillsInterface[] = [
+  // ---------- Languages ----------
+  {
+    name: "JavaScript",
+    description:
+      "Build interactive web applications and Node.js services with modern JavaScript.",
+    icon: Icons.javascript,
+  },
+  {
+    name: "TypeScript",
+    description:
+      "Write typed, maintainable frontend and backend code across React and Node.js projects.",
+    icon: Icons.typescript,
+  },
+  {
+    name: "Solidity",
+    description:
+      "Write Ethereum smart contracts for traceability, tamper-proof records and token payments.",
+    icon: Icons.solidity,
+  },
+  {
+    name: "HTML 5",
+    description: "Structure accessible, semantic web pages.",
+    icon: Icons.html5,
+  },
+  {
+    name: "CSS 3",
+    description: "Style responsive layouts and user interfaces.",
+    icon: Icons.css3,
+  },
+
+  // ---------- Frontend ----------
   {
     name: "React.js",
     description:
-      "Build interactive user interfaces using components, state, props, and virtual DOM for dynamic web applications.",
+      "Build component-based web applications and admin dashboards for business clients.",
     icon: Icons.react,
   },
   {
     name: "Next.js",
     description:
-      "Effortlessly build dynamic apps with routing, layouts, loading UI, and API routes.",
+      "Build fast, SEO-friendly websites such as corporate sites and this portfolio.",
     icon: Icons.nextjs,
   },
   {
-    name: "TypeScript",
+    name: "Redux",
     description:
-      "Enhance JavaScript with static types, making code more understandable and reliable.",
-    icon: Icons.typescript,
+      "Manage application state predictably in large React applications.",
+    icon: Icons.redux,
   },
+  {
+    name: "RTK Query",
+    description:
+      "Fetch and cache server data in React apps with Redux Toolkit Query.",
+    icon: Icons.reactRTK,
+  },
+  {
+    name: "React Query",
+    description:
+      "Manage server state, data fetching and caching in React applications.",
+    icon: Icons.reactQuery,
+  },
+  {
+    name: "React Native",
+    description:
+      "Build cross-platform mobile apps for iOS and Android with React.",
+    icon: Icons.react,
+  },
+  {
+    name: "Expo",
+    description:
+      "Develop, build and ship React Native mobile apps quickly.",
+    icon: Icons.expo,
+  },
+
+  // ---------- Backend ----------
   {
     name: "Node.js",
     description:
-      "Run JavaScript on the server side, enabling dynamic and responsive applications.",
+      "Build backend services and APIs that power web and mobile applications.",
     icon: Icons.nodejs,
   },
   {
     name: "Express.js",
     description:
-      "Build web applications and APIs quickly using a fast, unopinionated Node.js framework.",
+      "Build REST and GraphQL APIs on Node.js with a fast, minimal framework.",
     icon: Icons.express,
   },
   {
-    name: "React Native",
+    name: "REST API Design",
     description:
-      "Develop cross-platform mobile apps using React for consistent and engaging experiences.",
-    icon: Icons.react,
+      "Design clear, secure REST APIs with Node.js and Express.js.",
+    icon: Icons.restApi,
   },
   {
-    name: "PostgreSQL",
+    name: "GraphQL",
     description:
-      "Manage and organize relational databases efficiently for data-driven applications.",
-    icon: Icons.postgresql,
+      "Design GraphQL schemas and resolvers for precise, efficient data fetching.",
+    icon: Icons.graphql,
   },
   {
-    name: "MongoDB",
+    name: "Socket.IO",
     description:
-      "Store and retrieve data seamlessly with a flexible and scalable NoSQL database.",
-
-    icon: Icons.mongodb,
-  },
-  {
-    name: "JavaScript",
-    description:
-      "Create interactive and dynamic web experiences with the versatile scripting language.",
-
-    icon: Icons.javascript,
-  },
-  {
-    name: "Solidity",
-    description:
-      "Develop smart contracts for Ethereum blockchain to enable secure decentralized applications.",
-
-    icon: Icons.solidity,
-  },
-  {
-    name: "Web3.js",
-    description:
-      "Interact with Ethereum blockchain and smart contracts from JavaScript applications.",
-
-    icon: Icons.web3,
-  },
-  {
-    name: "Tailwind CSS",
-    description:
-      "Design beautiful, modern websites faster with a utility-first CSS framework.",
-    icon: Icons.tailwindcss,
-  },
-  {
-    name: "Docker",
-    description:
-      "Create containerized applications for consistent deployment across different environments.",
-    icon: Icons.docker,
-  },
-  {
-    name: "Git",
-    description:
-      "Track changes and collaborate on code with the most widely used version control system.",
-    icon: Icons.git,
-  },
-  {
-    name: "Jenkins",
-    description:
-      "Automate deployment pipelines and CI/CD processes for efficient software delivery.",
-    icon: Icons.jenkins,
-  },
-  {
-    name: "Figma",
-    description:
-      "Create user interface designs and prototypes for web and mobile applications.",
-    icon: Icons.figma,
-  },
-  {
-    name: "Jest",
-    description:
-      "Write and run unit tests to ensure code quality and prevent regressions.",
-    icon: Icons.jest,
-  },
-  {
-    name: "Redux",
-    description:
-      "Manage app state effectively using a predictable and centralized state container.",
-    icon: Icons.redux,
-  },
-  {
-    name: "Socket.io",
-    description:
-      "Enable real-time, bidirectional communication between clients and servers effortlessly.",
+      "Build real-time features such as chat over WebSockets.",
     icon: Icons.socketio,
   },
   {
-    name: "Material UI",
+    name: "JWT & RBAC",
     description:
-      "Create stunning and responsive UIs with a popular React UI framework.",
-    icon: Icons.mui,
+      "Secure APIs with JWT authentication and role-based access control.",
+    icon: Icons.jwt,
+  },
+  {
+    name: "Stripe",
+    description: "Integrate online payments with the Stripe API.",
+    icon: Icons.stripe,
+  },
+
+  // ---------- Databases / ORM ----------
+  {
+    name: "PostgreSQL",
+    description:
+      "Model and query relational data for data-heavy business applications.",
+    icon: Icons.postgresql,
   },
   {
     name: "MySQL",
     description:
-      "Manage and organize relational databases efficiently for data-driven applications.",
+      "Design and manage relational databases for web applications.",
     icon: Icons.mysql,
   },
-   {
-    name: "React Query",
+  {
+    name: "MongoDB",
     description:
-      "Manage server state and data fetching in React applications efficiently.",
-    icon: Icons.reactQuery,
-  },
-   {
-    name: "React RTK Query",
-    description:
-      "Simplify data fetching and caching in React applications with Redux Toolkit Query.",
-    icon: Icons.reactRTK,
-  },
-    {
-    name: "Stripe",
-    description:
-      "Accept payments and manage subscriptions easily with Stripe.",
-    icon: Icons.stripe,
+      "Store and query flexible document data with a NoSQL database.",
+    icon: Icons.mongodb,
   },
   {
-    name: "Nginx",
-    description:
-      "Deploy and manage high-performance web servers and reverse proxies.",
-    icon: Icons.nginx,
+    name: "Sequelize",
+    description: "Work with SQL databases from Node.js through an ORM.",
+    icon: Icons.sequelize,
   },
   {
-    name: "CI/CD",
-    description:
-      "Implement continuous integration and deployment pipelines for automated software delivery.",
-    icon: Icons.cicd,
+    name: "TypeORM",
+    description: "Map typed entities to SQL databases in TypeScript projects.",
+    icon: Icons.typeorm,
   },
   {
-    name: "HTML 5",
+    name: "Mongoose",
+    description: "Model MongoDB data with schemas and validation in Node.js.",
+    icon: Icons.mongoose,
+  },
+
+  // ---------- Blockchain ----------
+  {
+    name: "Ethereum",
     description:
-      "Structure web content beautifully with the latest version of HyperText Markup Language.",
-    icon: Icons.html5,
+      "Build decentralized features on the Ethereum blockchain.",
+    icon: Icons.ethereum,
   },
   {
-    name: "CSS 3",
-    description:
-      "Style web pages creatively with the latest iteration of Cascading Style Sheets.",
-    icon: Icons.css3,
+    name: "Truffle",
+    description: "Compile, test and deploy Solidity smart contracts.",
+    icon: Icons.truffle,
   },
+  {
+    name: "ethers.js",
+    description:
+      "Connect JavaScript applications to Ethereum and smart contracts.",
+    icon: Icons.ethereum,
+  },
+  {
+    name: "web3.js",
+    description:
+      "Interact with the Ethereum blockchain and smart contracts from JavaScript.",
+    icon: Icons.web3,
+  },
+
+  // ---------- DevOps / Cloud ----------
+  {
+    name: "Docker",
+    description:
+      "Containerize applications for consistent deployment across environments.",
+    icon: Icons.docker,
+  },
+  {
+    name: "AWS",
+    description: "Host and deploy applications on AWS EC2 and S3.",
+    icon: Icons.amazonaws,
+  },
+  {
+    name: "Jenkins CI/CD",
+    description:
+      "Automate build and deployment pipelines with Jenkins.",
+    icon: Icons.jenkins,
+  },
+
+  // ---------- Testing ----------
+  {
+    name: "Jest",
+    description: "Write unit tests to keep code reliable.",
+    icon: Icons.jest,
+  },
+  {
+    name: "Cypress / Playwright",
+    description: "Write end-to-end tests for web applications.",
+    icon: Icons.cypress,
+  },
+  {
+    name: "Postman",
+    description: "Test and document APIs.",
+    icon: Icons.postman,
+  },
+
+  // ---------- Design ----------
+  {
+    name: "Figma",
+    description: "Design user interfaces and landing pages.",
+    icon: Icons.figma,
+  },
+
+  // ---------- AI ----------
   {
     name: "AI Tools",
     description:
-      "Leverage AI-assisted development tools like Claude AI, Cursor, and OpenCode for faster development.",
+      "Use AI coding assistants (Claude Code, GitHub Copilot) to develop and refactor faster, reviewing and testing every change; integrate AI APIs into applications.",
     icon: Icons.ai,
   },
+
+  // ---------- Ways of working ----------
   {
-  name: "AWS",
-  description:
-    "Deploy and scale production workloads on AWS (EC2, S3, Lambda, RDS, CloudFront) with automated CI/CD and infrastructure-as-code practices.",
-  icon: Icons.amazonaws,
-},
-{
-  name: "GraphQL",
-  description:
-    "Design efficient GraphQL schemas and resolvers using Apollo Server and Node.js, enabling precise data fetching and optimized API performance.",
-  icon: Icons.graphql,
-},
-{
-  name: "RESTful API",
-  description:
-    "Architect secure, scalable REST APIs with Node.js and Express.js, powering authentication, trading operations, and third-party financial integrations.",
-  icon: Icons.restApi,
-}
+    name: "Git",
+    description:
+      "Version control and collaboration with GitHub and GitLab, including code reviews.",
+    icon: Icons.git,
+  },
+  {
+    name: "Agile / Scrum",
+    description:
+      "Work in Agile/Scrum teams, tracking tickets and projects in Tuleap.",
+    icon: Icons.agile,
+  },
 ];
 
 export const skills = skillsUnsorted
   .slice()
   .sort((a, b) => a.name.localeCompare(b.name));
 
-export const featuredSkills = skills.slice(0, 6);
+const featuredNames = [
+  "React.js",
+  "TypeScript",
+  "Node.js",
+  "Express.js",
+  "PostgreSQL",
+  "Next.js",
+];
+
+export const featuredSkills = featuredNames
+  .map((name) => skills.find((s) => s.name === name))
+  .filter((s): s is skillsInterface => Boolean(s));

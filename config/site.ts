@@ -4,7 +4,7 @@ export const siteConfig = {
   username: "seifeddineba",
   description:
     "Seif Eddine BEN AICHA - Full-Stack Developer with 5 years of experience in React.js, Node.js, TypeScript, and Next.js. Explore my projects, experience, and skills.",
-  url: "https://portfolio-seifeddineba.vercel.app",
+  url: "https://seifba.dev",
   links: {
     github: "https://github.com/seifeddineba",
     linkedin: "https://www.linkedin.com/in/seifeddineba",

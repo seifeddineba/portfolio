@@ -37,13 +37,14 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Clinical trial digitalization platform streamlining every step of clinical trials including user management, studies, drug management, feasibility forms, eCRFs, and real-time collaboration.",
     techStack: [
-      "React",
-      "Typescript",
+      "React.js",
+      "TypeScript",
+      "Redux",
+      "React Query",
       "Node.js",
-      "express.js",
+      "Express.js",
       "PostgreSQL",
       "Socket.io",
-      "React Query",
     ],
     startDate: new Date("2024-01-01"),
     endDate: new Date("2026-05-01"),
@@ -66,7 +67,7 @@ export const Projects: ProjectInterface[] = [
     descriptionDetails: {
       paragraphs: [
         "Clin-T is a comprehensive clinical trial digitalization platform that streamlines every step of clinical trials. The platform handles user management, studies, drug management, feasibility forms, and electronic Case Report Forms (eCRFs).",
-        "Built with React, TypeScript, and Node.js, the platform provides a robust, scalable solution for managing complex clinical trial workflows with real-time collaboration features.",
+        "Built with React.js, TypeScript, Redux, React Query, Node.js, Express.js, PostgreSQL and Socket.IO, the platform manages complex clinical trial workflows with real-time collaboration features.",
       ],
       bullets: [
         "Implemented user and center management with comprehensive study workflow tools.",
@@ -85,13 +86,7 @@ export const Projects: ProjectInterface[] = [
     category: ["Frontend", "Web Dev"],
     shortDescription:
       "Community-driven football platform letting users join organized games, meet new players, and enjoy competitive but friendly matches with secure payments and live score tracking.",
-    techStack: [
-      "React",
-      "Typescript",
-      "Tailwind CSS",
-      "Redux",
-      "React RTK Query",
-    ],
+    techStack: ["React.js", "TypeScript", "React RTK Query"],
     startDate: new Date("2025-12-25"),
     endDate: new Date("2026-03-01"),
     companyLogoImg: "/projects/playball/logo-playBall.png",
@@ -120,7 +115,7 @@ export const Projects: ProjectInterface[] = [
     descriptionDetails: {
       paragraphs: [
         "PlayBall is a community-driven football platform that lets users join organized games, meet new players, and enjoy competitive but friendly matches. The platform handles everything from game creation to payment processing and live score tracking.",
-        "Built with React and TypeScript, PlayBall provides a seamless user experience with secure payment integration, venue management, and real-time match updates.",
+        "As the front-end developer, I built the PlayBall web app with React.js, TypeScript and RTK Query (Redux Toolkit Query), covering onboarding, game hosting, payments, venue management and live match updates.",
       ],
       bullets: [
         "Developed user onboarding and profile management system.",
@@ -141,14 +136,13 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "AI-powered recruitment platform that connects recruiters and candidates using smart CV–job matching. Candidates upload CVs and create profiles, while recruiters post job requests and receive the best matches instantly.",
     techStack: [
-      "React",
-      "Typescript",
+      "React.js",
+      "TypeScript",
       "Node.js",
-      "express.js",
-      "PostgreSQL",
-      "Python",
-      "Socket.io",
+      "Express.js",
       "GraphQL",
+      "PostgreSQL",
+      "AI Tools",
     ],
     startDate: new Date("2024-01-01"),
     endDate: new Date("2024-06-01"),
@@ -169,11 +163,11 @@ export const Projects: ProjectInterface[] = [
     descriptionDetails: {
       paragraphs: [
         "E-Impliquance is an AI-powered recruitment platform designed to streamline the hiring process by connecting recruiters and candidates through intelligent CV–job matching.",
-        "Candidates can upload their CVs and create detailed profiles, while recruiters post job requests and instantly receive the best-matched candidates based on AI analysis.",
+        "Candidates can upload their CVs and create detailed profiles, while recruiters post job requests and receive the best-matched candidates. Matching is done by a separate Python AI service that extracts skills from CVs and qualifications from offers and returns a match score; I integrated its API into the platform.",
         "The platform features push notifications, admin dashboard management, and comprehensive profile and request management tools.",
       ],
       bullets: [
-        "Built an AI-based CV matching system that automatically ranks candidates against job requirements.",
+        "Integrated the AI matching API so recruiters see candidates ranked by match score.",
         "Implemented candidate account management with CV upload and profile creation features.",
         "Developed recruiter tools for job request creation and candidate matching.",
         "Integrated push notifications for real-time updates on applications and matches.",
@@ -187,7 +181,7 @@ export const Projects: ProjectInterface[] = [
     type: "Professional",
     category: ["Frontend", "Web Dev"],
     shortDescription:
-      "Clean, modern landing page showcasing the Deep-T and Clin-T blockchain-based healthcare and research platforms.",
+      "Trimakus' corporate website presenting its Deep-T and Clin-T products.",
     techStack: ["Next.js"],
     startDate: new Date("2025-12-01"),
     endDate: new Date("2026-03-01"),
@@ -208,13 +202,12 @@ export const Projects: ProjectInterface[] = [
     ],
     descriptionDetails: {
       paragraphs: [
-        "Block-T is a clean, modern landing page designed to showcase the Deep-T and Clin-T projects. The website provides an engaging introduction to both platforms, highlighting their blockchain-based solutions for healthcare and research.",
-        "Built with Next.js, the landing page features responsive design, smooth animations, and optimized performance for a seamless user experience.",
+        "Block-T is the Trimakus corporate website presenting the company's Deep-T and Clin-T products for preclinical research and clinical trials.",
+        "I built it as the front-end developer with Next.js.",
       ],
       bullets: [
-        "Designed and developed a modern landing page for Deep-T and Clin-T platforms.",
-        "Implemented responsive design with smooth animations and transitions.",
-        "Optimized performance and SEO using Next.js features.",
+        "Built the corporate website presenting the Deep-T and Clin-T products.",
+        "Implemented a responsive layout with Next.js.",
       ],
     },
   },
@@ -222,16 +215,17 @@ export const Projects: ProjectInterface[] = [
     id: "vaistat",
     companyName: "Vaistat",
     type: "Professional",
-    category: ["Full Stack", "Web Dev"],
+    category: ["Full Stack", "Web Dev", "Mobile Dev"],
     shortDescription:
       "Healthcare and medication delivery ecosystem connecting clinics, pharmacies, patients, and couriers through real-time prescription and medication delivery management.",
     techStack: [
-      "React",
-      "Typescript",
+      "React.js",
+      "React Native",
+      "Expo",
+      "TypeScript",
       "Node.js",
-      "express.js",
+      "Express.js",
       "MongoDB",
-      "Socket.io",
     ],
     startDate: new Date("2024-06-01"),
     endDate: new Date("2025-02-01"),
@@ -253,13 +247,13 @@ export const Projects: ProjectInterface[] = [
     descriptionDetails: {
       paragraphs: [
         "Vaistat is a multi-platform healthcare ecosystem connecting clinics, pharmacies, patients, and couriers. It enables real-time prescription management, medication delivery tracking, and seamless communication between all stakeholders.",
-        "The platform features a clinic portal for prescription management, a pharmacy interface for managing requests and medication history, a patient app for delivery tracking and pharmacist chat, and a courier app for delivery routing and payment processing.",
+        "The platform features a clinic portal for prescription management, a pharmacy interface for managing requests and medication history, and two mobile apps built with React Native and Expo: a patient app for delivery tracking, purchases and pharmacist chat, and a courier app for delivery routing, confirmations and payments.",
       ],
       bullets: [
         "Built clinic portal with real-time prescription management capabilities.",
         "Developed pharmacy interface for managing prescription requests and medication history.",
-        "Created patient app with delivery tracking, purchase essentials, and pharmacist chat.",
-        "Built courier app with delivery routing, confirmations, and payment processing.",
+        "Created the patient mobile app (React Native, Expo) with delivery tracking, purchases and pharmacist chat.",
+        "Built the courier mobile app (React Native, Expo) with delivery routing, confirmations and payments.",
         "Integrated real-time chat and push notifications across all platforms.",
       ],
     },
@@ -271,16 +265,14 @@ export const Projects: ProjectInterface[] = [
     type: "Professional",
     category: ["Full Stack", "Web Dev", "Cryptocurrency", "Blockchain"],
     shortDescription:
-      "Service marketplace and freelance platform where users post service requests and professionals offer their services, with messaging, notifications, payments, and analytics.",
+      "Service marketplace and freelance platform where users post service requests and professionals offer their services, with real-time chat, notifications and payments via Stripe, crypto and a platform token.",
     techStack: [
-      "React",
+      "React.js",
+      "Redux",
       "Node.js",
-      "express.js",
+      "Express.js",
       "MySQL",
-      "Socket.io",
-      "OneSignal",
       "Stripe",
-      "Ethers.js",
       "Solidity",
     ],
     startDate: new Date("2021-09-01"),
@@ -322,7 +314,7 @@ export const Projects: ProjectInterface[] = [
         "Integrated real-time chat for user-professional communication.",
         "Added push notifications for updates and alerts.",
         "Developed payment system supporting Stripe, crypto, and platform token.",
-        "Created admin dashboard for platform management and analytics.",
+        "Created admin dashboard for platform management.",
       ],
     },
   },
@@ -335,14 +327,12 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Blockchain-based preclinical research platform ensuring traceability and integrity in preclinical studies through blockchain technology, making research reproducible, secure, and fully auditable.",
     techStack: [
-      "React",
+      "React.js",
       "Node.js",
-      "express.js",
-      "MySQL",
+      "Express.js",
+      "PostgreSQL",
       "Solidity",
-      "Material UI",
-      "Redux",
-      "Web3.js",
+      "Ethereum",
     ],
     startDate: new Date("2021-09-01"),
     endDate: new Date("2023-03-01"),
@@ -377,7 +367,7 @@ export const Projects: ProjectInterface[] = [
     category: ["Full Stack", "Web Dev"],
     shortDescription:
       "Factory management and ERP companion platform to control orders, inventory, production, and users. Integrates with ERP systems or works standalone.",
-    techStack: ["React", "Node.js", "express.js", "MySQL"],
+    techStack: ["React.js", "Node.js", "Express.js", "MySQL"],
     startDate: new Date("2024-01-01"),
     endDate: new Date("2024-06-01"),
     companyLogoImg: "/projects/usina/usina-logo.png",
@@ -398,12 +388,12 @@ export const Projects: ProjectInterface[] = [
     ],
     descriptionDetails: {
       paragraphs: [
-        "USINA is a factory management platform designed to control orders, inventory, production, and users. It can integrate with existing ERP systems or operate as a standalone solution.",
-        "The platform provides comprehensive tools for managing invoices, sales orders, purchase orders, inventory tracking, and production planning with real-time monitoring capabilities.",
+        "USINA is a factory management platform designed to control orders, inventory, production, and users. It can integrate with existing ERP systems or operate as a standalone solution. It was my engineering-degree graduation project (2024), built at Trimakus.",
+        "The platform provides tools for managing invoices, sales orders, purchase orders, inventory and stock tracking, and production planning and monitoring.",
       ],
       bullets: [
         "Built invoice, sales order, and purchase order management system.",
-        "Implemented inventory and stock tracking with real-time updates.",
+        "Implemented inventory and stock tracking.",
         "Developed production planning and monitoring dashboard.",
         "Created user and role management for access control.",
         "Designed platform to work standalone or integrate with ERP systems.",
@@ -414,17 +404,17 @@ export const Projects: ProjectInterface[] = [
     id: "inssuria",
     companyName: "Inssuria",
     type: "Professional",
-    category: ["Mobile Dev", "Full Stack", "Web Dev", "Blockchain"],
+    category: ["Mobile Dev", "Full Stack", "Blockchain"],
     shortDescription:
       "Decentralized mobile application for vehicle management, digital wallets, and blockchain-based accident reports with immutable records.",
     techStack: [
       "React Native",
-      "React",
+      "Expo",
       "Node.js",
-      "express.js",
+      "Express.js",
       "MySQL",
       "Solidity",
-      "Web3.js",
+      "Ethereum",
     ],
     startDate: new Date("2021-02-01"),
     endDate: new Date("2021-06-01"),
@@ -454,7 +444,7 @@ export const Projects: ProjectInterface[] = [
     descriptionDetails: {
       paragraphs: [
         "Inssuria is a decentralized mobile application for vehicle management, digital wallets, and blockchain-based accident reports. Built with React Native and Expo, the app provides users with secure vehicle management and immutable accident record keeping.",
-        "The platform integrates Solidity smart contracts to store accident reports on-chain, providing insurance companies with secure, transparent access to verified data.",
+        "The app stores accident reports on Ethereum with Solidity smart contracts, so records are tamper-proof and can support insurance claims. It was my Bachelor's graduation project (2021), built during my internship at Trimakus.",
       ],
       bullets: [
         "Developed cross-platform mobile app using React Native and Expo.",
@@ -469,12 +459,12 @@ export const Projects: ProjectInterface[] = [
     id: "taxi-parisien",
     companyName: "Taxi Parisien",
     type: "Professional",
-    category: ["Full Stack", "Web Dev", "UI/UX"],
+    category: ["Full Stack", "Web Dev"],
     shortDescription:
       "Ride-booking web application allowing users to book rides, choose car types, and receive real-time distance and price estimates with receipt generation.",
-    techStack: ["HTML 5", "CSS 3", "Javascript", "Node.js", "MongoDB"],
-    startDate: new Date("2023-01-01"),
-    endDate: new Date("2023-03-01"),
+    techStack: ["HTML 5", "CSS 3", "JavaScript", "Node.js", "MongoDB"],
+    startDate: new Date("2023-09-01"),
+    endDate: new Date("2023-11-01"),
     companyLogoImg: "/projects/taxi-parisien/taxi-parisien-logo.png",
     firstScreen: "/projects/taxi-parisien/taxi-parisien1.png",
     pagesInfoArr: [
@@ -498,43 +488,7 @@ export const Projects: ProjectInterface[] = [
       bullets: [
         "Developed a complete ride booking and reservation system with real-time price and distance estimation.",
         "Implemented car type selection and receipt generation features.",
-        "Built an admin dashboard for managing bookings, drivers, and platform operations.",
-      ],
-    },
-  },
-
-  {
-    id: "plutus",
-    companyName: "Plutus",
-    type: "Personal",
-    category: ["Full Stack", "Web Dev", "UI/UX"],
-    shortDescription:
-      "Banking anti-fraud and AML platform focused on tracking suspicious transactions, preventing fraud, and managing clients, accounts, and branches.",
-    techStack: ["Next.js", "Typescript", "Node.js", "express.js", "PostgreSQL"],
-    startDate: new Date("2025-10-01"),
-    endDate: new Date("2025-12-01"),
-    companyLogoImg: "/projects/plutus/plutus-logo.png",
-    firstScreen: "/projects/plutus/plutus-1.png",
-    pagesInfoArr: [
-      {
-        title: "Banking Dashboard",
-        description: "Client and account management with transaction tracking.",
-        imgArr: [
-          "/projects/plutus/plutus-1.png",
-          "/projects/plutus/plutus-2.png",
-        ],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        "Plutus is a banking anti-fraud and Anti-Money Laundering (AML) platform designed to track suspicious transactions, prevent fraud, and manage banking operations including clients, accounts, and branches.",
-        "The platform provides a comprehensive fraud monitoring dashboard and tools for managing bank branches, accounts, and transactions in a secure environment.",
-      ],
-      bullets: [
-        "Built users and clients management system for banking operations.",
-        "Developed bank and branch management tools for organizational oversight.",
-        "Implemented accounts and transaction tracking with real-time monitoring.",
-        "Created fraud monitoring dashboard with suspicious activity alerts.",
+        "Built an admin dashboard for managing bookings and platform operations.",
       ],
     },
   },
@@ -546,9 +500,9 @@ export const Projects: ProjectInterface[] = [
     category: ["Full Stack", "Web Dev", "Backend"],
     shortDescription:
       "E-commerce warehouse and operations dashboard helping businesses manage products, storage, orders, vendors, ads, and KPIs with delivery partner integrations.",
-    techStack: ["React", "Node.js", "express.js", "MySQL"],
-    startDate: new Date("2023-04-01"),
-    endDate: new Date("2023-08-01"),
+    techStack: ["React.js", "Node.js", "Express.js", "MySQL"],
+    startDate: new Date("2024-01-01"),
+    endDate: new Date("2024-05-01"),
     companyLogoImg: "/projects/orty/orty-logo.png",
     firstScreen: "/projects/orty/orty1.png",
     pagesInfoArr: [
@@ -568,9 +522,9 @@ export const Projects: ProjectInterface[] = [
         "Built user and vendor management system for e-commerce operations.",
         "Implemented order and product handling with inventory tracking.",
         "Developed storage and store tracking tools for warehouse management.",
-        "Created ads management system for promotional campaigns.",
+        "Created ads management for promotional campaigns.",
         "Built KPI dashboard for performance monitoring and analytics.",
-        "Integrated delivery partner APIs for seamless logistics.",
+        "Integrated delivery partners.",
       ],
     },
   },

@@ -19,7 +19,7 @@ A modern, responsive, and SEO-optimized **Next.js 16 portfolio** showcasing my e
 
 ## 🚀 Demo
 
-View the live demo at [https://portfolio-seifeddineba.vercel.app](https://portfolio-seifeddineba.vercel.app)
+View the live demo at [https://seifba.dev](https://seifba.dev)
 
 ## 🛠️ Tech Stack
 

@@ -71,7 +71,16 @@ export type ValidSkills =
   | "Stripe"
   | "AI Tools"
   | "Nginx"
-  | "Framer Motion";
+  | "Framer Motion"
+  | "Expo"
+  | "Ethereum"
+  | "REST API"
+  | "Sequelize"
+  | "TypeORM"
+  | "Mongoose"
+  | "Truffle"
+  | "Postman"
+  | "Agile / Scrum";
 
 export type ValidCategory =
   | "Full Stack"
